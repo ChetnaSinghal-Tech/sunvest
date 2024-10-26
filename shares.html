@@ -1,0 +1,352 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Groww Stocks
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+       const profilePic = document.getElementById('profile-pic');
+       const dropdown = document.getElementById('profile-dropdown');
+ 
+       profilePic.addEventListener('click', function () {
+         dropdown.classList.toggle('hidden');
+       });
+ 
+       document.addEventListener('click', function (event) {
+         if (!profilePic.contains(event.target) && !dropdown.contains(event.target)) {
+           dropdown.classList.add('hidden');
+         }
+       });
+     });
+   </script>
+ </head>
+ <body class="bg-gray-100 font-sans">
+  <header class="bg-white shadow">
+   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center">
+        <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/jSwdhMKz/Whats-App-Image-2024-10-26-at-00-44-05-1a18e719-removebg-preview.png' alt='Whats-App-Image-2024-10-26-at-00-44-05-1a18e719-removebg-preview' height=" 100px" width=" 100px"/></a>
+     
+    </div>
+    <nav class="flex items-center space-x-4">
+     <a class="text-gray-700" href="index.html">
+      Home
+     </a>
+     <a class="text-gray-700" href="#">
+      Investments
+     </a>
+     <div class="relative">
+      <input class="border rounded-full py-2 px-4 pl-10 w-80" placeholder="Search stocks" type="text"/>
+      <i class="fas fa-search absolute left-3 top-3 text-gray-500">
+      </i>
+     </div>
+     <i class="fas fa-bell text-gray-700">
+     </i>
+     <i class="fas fa-shopping-cart text-gray-700">
+     </i>
+     <div class="relative">
+        <img alt="User profile" class="h-10 w-10 rounded-full cursor-pointer" height="40" id="profile-pic" src="https://storage.googleapis.com/a1aa/image/H1fwXXK1mhyDIaMZ9EbGkr2jJjwJqxLxepRgLid8mRFXuVqTA.jpg" width="40"/>
+        <div class="absolute right-0 mt-2 w-48 bg-white border rounded-lg shadow-lg hidden" id="profile-dropdown">
+         <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="profile.html">
+          Profile
+         </a>
+         <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+          Settings
+         </a>
+         <a class="block px-4 py-2 text-gray-700 hover:bg-gray-100" href="#">
+          Logout
+         </a>
+        </div>
+       </div>
+    </nav>
+   </div>
+  </header>
+  <main class="container mx-auto px-4 py-6 flex">
+   <aside class="w-1/4 bg-white p-4 rounded-lg shadow">
+    <div class="flex justify-between items-center mb-4">
+     <h2 class="text-lg font-semibold">
+      FILTERS
+     </h2>
+     <a class="text-green-500" href="#">
+      CLEAR ALL
+     </a>
+    </div>
+    <div class="mb-4">
+     <h3 class="text-gray-700 font-semibold">
+      Sector
+     </h3>
+     <select class="w-full border rounded py-2 px-3 mt-2">
+      <option>
+       Select Sector
+      </option>
+     </select>
+    </div>
+    <div class="mb-4">
+     <h3 class="text-gray-700 font-semibold">
+      Index
+     </h3>
+     <select class="w-full border rounded py-2 px-3 mt-2">
+      <option>
+       Select Index
+      </option>
+     </select>
+    </div>
+    <div class="mb-4">
+     <h3 class="text-gray-700 font-semibold">
+      Market Cap (Cr)
+     </h3>
+     <div class="flex items-center mt-2">
+      <input class="w-full" max="100000000" min="0" type="range"/>
+     </div>
+     <div class="flex justify-between mt-2">
+      <input class="border rounded py-2 px-3 w-1/2 mr-2" type="number" value="0"/>
+      <input class="border rounded py-2 px-3 w-1/2" type="number" value="100000000"/>
+     </div>
+     <div class="flex justify-between mt-2">
+      <button class="bg-gray-200 py-1 px-3 rounded">
+       Small
+      </button>
+      <button class="bg-gray-200 py-1 px-3 rounded">
+       Mid
+      </button>
+      <button class="bg-gray-200 py-1 px-3 rounded">
+       Large
+      </button>
+     </div>
+    </div>
+    <div>
+     <h3 class="text-gray-700 font-semibold">
+      Closing Price
+     </h3>
+     <select class="w-full border rounded py-2 px-3 mt-2">
+      <option>
+       Select Closing Price
+      </option>
+     </select>
+    </div>
+   </aside>
+   <section class="w-3/4 ml-6">
+    <div class="flex justify-between items-center mb-4">
+     <h2 class="text-lg font-semibold">
+      Search results
+      <span class="text-gray-500">
+       3054 Stocks
+      </span>
+     </h2>
+    </div>
+    
+    <table class="w-full bg-white rounded-lg shadow">
+    
+     <thead>
+      <tr class="border-b">
+       <th class="py-3 px-4 text-left">
+        PROJECTS
+       </th>
+       <th class="py-3 px-4 text-left">
+        MARKET PRICE
+       </th>
+       <th class="py-3 px-4 text-left">
+        CLOSE PRICE
+       </th>
+       <th class="py-3 px-4 text-left">
+        MARKET CAP (CR)
+       </th>
+      </tr>
+     </thead>
+     </a>
+     <tbody>
+      
+      <tr class="border-b">
+        
+       <td class="py-3 px-4 flex items-center">
+        <span>
+        <a href="solarfarm.html">Utility-Scale Solar Farms</a>
+        </span>
+        
+       </td>
+    
+       <td class="py-3 px-4">
+        <span>
+         ₹1,924.80
+        </span>
+        <span class="text-red-500">
+         -10.20 (0.53%)
+        </span>
+       </td>
+       <td class="py-3 px-4">
+        ₹1,934.30
+       </td>
+       <td class="py-3 px-4 flex justify-between items-center">
+        <span>
+         ₹12,26,231
+        </span>
+        <i class="fas fa-plus-circle text-green-500">
+        </i>
+       </td>
+      </tr>
+      <tr class="border-b">
+       <td class="py-3 px-4 flex items-center">
+        <span>
+         Rooftop Solar Installations
+        </span>
+        
+       </td>
+       <td class="py-3 px-4">
+        <span>
+         ₹2,184.95
+        </span>
+        <span class="text-red-500">
+         -35.05 (1.58%)
+        </span>
+       </td>
+       <td class="py-3 px-4">
+        ₹2,219.55
+       </td>
+       <td class="py-3 px-4 flex justify-between items-center">
+        <span>
+         ₹8,32,861
+        </span>
+        <i class="fas fa-plus-circle text-green-500">
+        </i>
+       </td>
+      </tr>
+      <tr class="border-b">
+       <td class="py-3 px-4 flex items-center">
+        <span>
+         Community Solar Projects
+        </span>
+        
+       </td>
+       <td class="py-3 px-4">
+        <span>
+         ₹1,056.55
+        </span>
+        <span class="text-red-500">
+         -23.70 (2.19%)
+        </span>
+       </td>
+       <td class="py-3 px-4">
+        ₹1,080.40
+       </td>
+       <td class="py-3 px-4 flex justify-between items-center">
+        <span>
+         ₹5,93,170
+        </span>
+        <i class="fas fa-plus-circle text-green-500">
+        </i>
+       </td>
+      </tr>
+      <tr class="border-b">
+       <td class="py-3 px-4 flex items-center">
+        <span>
+         Solar + Battery Storage Systems
+        </span>
+        
+       </td>
+       <td class="py-3 px-4">
+        <span>
+         ₹2,244.00
+        </span>
+        <span class="text-red-500">
+         -21.25 (0.94%)
+        </span>
+       </td>
+       <td class="py-3 px-4">
+        ₹2,264.69
+       </td>
+       <td class="py-3 px-4 flex justify-between items-center">
+        <span>
+         ₹5,32,100
+        </span>
+        <i class="fas fa-plus-circle text-green-500">
+        </i>
+       </td>
+      </tr>
+      <tr class="border-b">
+       <td class="py-3 px-4 flex items-center">
+        <span>
+         Floating solar
+        </span>
+        
+       </td>
+       <td class="py-3 px-4">
+        <span>
+         ₹790.75
+        </span>
+        <span class="text-red-500">
+         -6.30 (0.79%)
+        </span>
+       </td>
+       <td class="py-3 px-4">
+        ₹796.70
+       </td>
+       <td class="py-3 px-4 flex justify-between items-center">
+        <span>
+         ₹3,39,327
+        </span>
+        <i class="fas fa-plus-circle text-green-500">
+        </i>
+       </td>
+      </tr>
+      <tr class="border-b">
+       <td class="py-3 px-4 flex items-center">
+        <span>
+         Agro-Photovoltaics
+        </span>
+        
+       </td>
+       <td class="py-3 px-4">
+        <span>
+         ₹1,786.85
+        </span>
+        <span class="text-red-500">
+         -58.70 (3.18%)
+        </span>
+       </td>
+       <td class="py-3 px-4">
+        ₹1,846.50
+       </td>
+       <td class="py-3 px-4 flex justify-between items-center">
+        <span>
+         ₹3,20,295
+        </span>
+        <i class="fas fa-plus-circle text-green-500">
+        </i>
+       </td>
+      </tr>
+      <tr class="border-b">
+       <td class="py-3 px-4 flex items-center">
+        <span>
+         Solar-Powered EV Charging Stations
+        </span>
+        
+       </td>
+       <td class="py-3 px-4">
+        <span>
+         ₹592.70
+        </span>
+        <span class="text-green-500">
+         5.90 (1.01%)
+        </span>
+       </td>
+       <td class="py-3 px-4">
+        ₹586.75
+       </td>
+       <td class="py-3 px-4 flex justify-between items-center">
+        <span>
+         ₹3,20,105
+        </span>
+        <i class="fas fa-plus-circle text-green-500">
+        </i>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+   </section>
+  </main>
+ </body>
+</html>

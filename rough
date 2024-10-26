@@ -1,0 +1,12 @@
+<div class="grid grid-cols-2 gap-4 mt-8">
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="font-semibold">Privacy & personalisation</h2>
+                        <p class="text-gray-600 mt-2">See the data in your Google Account and choose what activity is saved, to personalise your Google experience</p>
+                        <button class="mt-4 text-blue-500">Manage your data and privacy</button>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="font-semibold">You have security recommendations</h2>
+                        <p class="text-gray-600 mt-2">Recommended actions found in the Security Check-Up</p>
+                        <button class="mt-4 text-blue-500">Protect your account</button>
+                    </div>
+                </div>
